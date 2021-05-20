@@ -8,16 +8,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --item-margin-bottom: 25px;
+  --button-size: 30px;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --item-max-width: 256px;
+}
+
 .container {
   position: relative;
   max-width: 880px;
-  padding: 78px 24px calc(136px - 25px);
+  padding: 78px 24px calc(136px - var(--item-margin-bottom));
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   background: #fdffb4;
   border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--shadow-color);
   border-radius: 10px;
 }
 
@@ -25,10 +32,10 @@ body {
   position: absolute;
   top: 20px;
   right: 26px;
-  width: 30px;
-  height: 30px;
+  width: var(--button-size);
+  height: var(--button-size);
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--shadow-color);
   background-color: #eb5252;
   border-radius: 50%;
 }
@@ -43,13 +50,13 @@ body {
 .item {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 256px;
-  max-width: 256px;
+  flex-basis: var(--item-max-width);
+  max-width: var(--item-max-width);
   height: 45px;
   display: flex;
   align-items: center;
   padding: 0 20px;
-  margin-bottom: 25px;
+  margin-bottom: var(--item-margin-bottom);
   box-shadow: 0px 2px 2px rgba(71, 138, 239, 0.25);
   border: 1px solid #8790e4;
 }
